@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AskMyNotes</title>
+
+    <style>
+
+        body{
+            font-family: Georgia, serif;
+            margin:40px;
+            background:#ffffff;
+        }
+
+        .container{
+            width:600px;
+        }
+
+        h1{
+            font-size:42px;
+            margin-bottom:10px;
+        }
+
+        p{
+            color:#555;
+            margin-bottom:30px;
+        }
+
+        h2{
+            font-size:30px;
+            margin-bottom:15px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+        }
+
+        input[type="file"]{
+            margin-bottom:25px;
+        }
+
+        textarea{
+            width:100%;
+            height:120px;
+            padding:10px;
+            font-size:16px;
+            resize:none;
+        }
+
+        button{
+            margin-top:15px;
+            padding:10px 20px;
+            background:#4CAF50;
+            color:white;
+            border:none;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#388E3C;
+        }
+
+        #answer{
+            margin-top:15px;
+            border:1px solid #ccc;
+            padding:15px;
+            min-height:120px;
+        }
+
+        footer{
+            margin-top:20px;
+            color:gray;
+            font-size:14px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>AskMyNotes</h1>
+
+    <p>Upload your notes and ask questions from them.</p>
+
+    <h2>Upload Notes</h2>
+
+    <label for="pdf">Choose your notes file:</label>
+
+    <input type="file" id="pdf" accept=".pdf">
+
+    <h2>Ask a Question</h2>
+
+    <label for="question">Enter your question:</label>
+
+    <textarea
+        id="question"
+        placeholder="Enter your question here...">
+    </textarea>
+
+    <br>
+
+    <button onclick="showAnswer()">
+        Ask My Notes
+    </button>
+
+    <h2>Answer</h2>
+
+    <div id="answer">
+        Your AI-generated answer will appear here.
+    </div>
+
+    <footer>
+        AskMyNotes Capstone Project
+    </footer>
+
+</div>
+
+<script>
+
+function showAnswer(){
+
+    let question=document.getElementById("question").value;
+
+    if(question=="")
+    {
+        document.getElementById("answer").innerHTML="Please enter a question.";
+    }
+    else
+    {
+        document.getElementById("answer").innerHTML=
+        "Answer for: <b>"+question+"</b><br><br>This is where the AI-generated answer will appear.";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
